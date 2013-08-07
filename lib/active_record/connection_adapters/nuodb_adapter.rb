@@ -684,7 +684,7 @@ module ActiveRecord
             # nuodb specific types...
             :char => {:name => 'char'},
             :numeric => {:name => 'numeric(20)'},
-            :binarystring => {:name => 'varchar', :limit => 255}
+            :binarystring => {:name => 'binary', :limit => 255}
         }
       end
 
