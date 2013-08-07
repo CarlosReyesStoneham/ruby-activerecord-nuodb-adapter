@@ -28,17 +28,12 @@ install:
   - gem install activerecord-nuodb-adapter
   - gem install rails -v "=3.2.8"
 
-notifications:
-  recipients:
-    - buck.robert.j@gmail.com
-    - rbuck@nuodb.com
-    - lbayas@nuodb.com
-
 before_install:
   - wget http://www.nuodb.com/latest/releases/nuodb-${NUODB_VERSION}.linux.x64.deb --output-document=/var/tmp/nuodb.deb
   - sudo dpkg -i /var/tmp/nuodb.deb
   - sleep 2
   - sudo chmod 777 active_setup_linux.sh
+  - cd / && find . -name load_paths*
 
 before_script:
   - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz --verbose debug --archive /var/tmp/nuodb --initialize --force &
