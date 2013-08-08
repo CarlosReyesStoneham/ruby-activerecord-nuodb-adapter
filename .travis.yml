@@ -47,7 +47,7 @@ script:
   - find ~/.rvm -name logger*
   - cp ~/tmpy/rails-latest/load_paths.rb /home/travis/build/CarlosReyesStoneham/
   - cp /home/travis/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/minitest/autorun.rb /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/testing
-  - cp /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/logger.rb /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/
+  - cp /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/core_ext/logger.rb /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/
   - ARCONN=nuodb ruby -Itest ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
 after_script:
