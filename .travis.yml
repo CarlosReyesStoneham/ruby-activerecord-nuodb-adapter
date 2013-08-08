@@ -44,7 +44,6 @@ before_script:
 
 script:
   - ./active_setup_linux.sh
-  - echo 'export RUBYLIB="."' >> ~/.profile
   #- cp ~/tmpy/rails-latest/load_paths.rb /home/travis/build/CarlosReyesStoneham/
   #- cp /home/travis/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/minitest/autorun.rb /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/testing
   #- cp /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/core_ext/logger.rb /home/travis/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/

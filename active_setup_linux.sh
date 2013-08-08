@@ -80,7 +80,9 @@ bundle install
 
 export GEM_PATH=/home/travis/.rvm/gems/ruby-1.9.3-p448
 
-cd ~/tmpy/rails-latest && ls
+echo 'export RUBYLIB="."' >> ~/.profile
+
+cd ~/tmpy/rails-latest/activerecord
 
 #RUBYLIB="~/tmpy/rails-latest/activerecord/test/cases:$RUBYLIB"
 #export RUBYLIB
