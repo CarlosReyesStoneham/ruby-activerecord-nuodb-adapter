@@ -33,7 +33,6 @@ before_install:
   - sudo dpkg -i /var/tmp/nuodb.deb
   - sleep 2
   - sudo chmod 777 active_setup_linux.sh
-  - cd / && sudo find . -name load_paths*
 
 before_script:
   - ${NUODB_ROOT}/bin/nuodb --chorus test --password bar --dba-user dba --dba-password baz --verbose debug --archive /var/tmp/nuodb --initialize --force &
@@ -45,7 +44,7 @@ before_script:
 
 script:
   - ./active_setup_linux.sh
-  - ARCONN=nuodb ruby -Itest ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+  - ARCONN=nuodb ruby -Itest:~/tmpy/rails-latest ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
 after_script:
   - sudo dpkg -r nuodb
