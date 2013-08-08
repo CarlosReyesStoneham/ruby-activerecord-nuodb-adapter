@@ -84,6 +84,8 @@ echo 'export RUBYLIB="."' >> ~/.profile
 
 cd ~/tmpy/rails-latest/activerecord
 
+Dir["/home/travis/rvm/*.rb"].each {|file| require file }
+
 #RUBYLIB="~/tmpy/rails-latest/activerecord/test/cases:$RUBYLIB"
 #export RUBYLIB
 
