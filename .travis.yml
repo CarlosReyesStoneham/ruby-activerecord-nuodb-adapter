@@ -44,6 +44,7 @@ before_script:
 
 script:
   - ./active_setup_linux.sh
+  - find ~/.rvm -name autorun.rb
   - cp ~/tmpy/rails-latest/load_paths.rb /home/travis/build/CarlosReyesStoneham/
   - ARCONN=nuodb ruby -Itest ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
