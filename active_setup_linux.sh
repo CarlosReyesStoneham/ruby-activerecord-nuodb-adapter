@@ -84,7 +84,16 @@ echo 'export RUBYLIB="."' >> ~/.profile
 
 cd ~/tmpy/rails-latest/activerecord
 
-Dir["/home/travis/rvm/*.rb"].each {|file| require file }
+sed "s/require "cases/helper"/require_relative "cases/helper"/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require 'bigdecimal/util'/require_relative 'bigdecimal/util'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require 'models/person'/require_relative 'models/person'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require 'models/topic'/require_relative 'models/topic'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require 'models/developer'/require_relative 'models/developer'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+
+sed "s/require MIGRATIONS_ROOT + "/valid/2_we_need_reminders"/require_relative MIGRATIONS_ROOT + '/valid/2_we_need_reminders'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require MIGRATIONS_ROOT + "/rename/1_we_need_things"/require_relative MIGRATIONS_ROOT + '/rename/1_we_need_things'/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require MIGRATIONS_ROOT + "/valid/2_we_need_reminders"'/require_relative MIGRATIONS_ROOT + "/valid/2_we_need_reminders"/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed "s/require MIGRATIONS_ROOT + "/decimal/1_give_me_big_numbers"/require_relative MIGRATIONS_ROOT + "/decimal/1_give_me_big_numbers"/" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
 #RUBYLIB="~/tmpy/rails-latest/activerecord/test/cases:$RUBYLIB"
 #export RUBYLIB
