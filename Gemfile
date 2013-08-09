@@ -8,4 +8,5 @@ group(:development, :test) do
   gem 'rdoc'
 #added
   gem 'erubis'
+  gem 'bundler'
 end
