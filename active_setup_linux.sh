@@ -84,11 +84,11 @@ echo 'export RUBYLIB="."' >> ~/.profile
 
 cd ~/tmpy/rails-latest/activerecord
 
-sed -i "s/%wrequire "cases/helper"/%wrequire_relative "cases/helper"/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
-sed -i "s/%wrequire 'bigdecimal/util'/%wrequire_relative 'bigdecimal/util'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
-sed -i "s/%wrequire 'models/person'/%wrequire_relative 'models/person'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
-sed -i "s/%wrequire 'models/topic'/%wrequire_relative 'models/topic'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
-sed -i "s/%wrequire 'models/developer'/%wrequire_relative 'models/developer'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed -i 's/require "cases/helper"/require_relative "cases/helper"/' ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed -i 's/require 'bigdecimal/util'/require_relative 'bigdecimal/util'/' ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed -i 's/require 'models/person'/require_relative 'models/person'/' ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed -i 's/require 'models/topic'/require_relative 'models/topic'/' ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
+sed -i 's/require 'models/developer'/require_relative 'models/developer'/' ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
 sed -i "s/%wrequire MIGRATIONS_ROOT + "/valid/2_we_need_reminders"/%wrequire_relative MIGRATIONS_ROOT + '/valid/2_we_need_reminders'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 sed -i "s/%wrequire MIGRATIONS_ROOT + "/rename/1_we_need_things"/%wrequire_relative MIGRATIONS_ROOT + '/rename/1_we_need_things'/g" ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
