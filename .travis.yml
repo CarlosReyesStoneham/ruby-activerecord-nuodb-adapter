@@ -43,7 +43,7 @@ before_script:
 
 script:
   - ./active_setup_linux.sh
-  - ~/tmpy/rails-latest/activerecord && ls
+  - cd ~/tmpy/rails-latest/activerecord && ls
   - ARCONN=nuodb ruby -Itest ~/tmpy/rails-latest/activerecord/test/cases/migration_test.rb
 
 after_script:
